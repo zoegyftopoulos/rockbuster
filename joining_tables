@@ -1,9 +1,9 @@
 SELECT	B.customer_id,
-		    B.first_name,
-	    	B.last_name,
-	    	E.country,
-	    	D.city,
-	    	SUM (A.amount) AS total_amount_paid
+	B.first_name,
+	B.last_name,
+	E.country,
+	D.city,
+	SUM (A.amount) AS total_amount_paid
 FROM payment A
 INNER JOIN customer B ON A.customer_id = B.customer_id
 INNER JOIN address C ON B.address_id = C.address_id
@@ -27,10 +27,6 @@ WHERE D.city in (
 GROUP BY E.country, D.city
 ORDER BY COUNT(B.customer_id) DESC
 LIMIT 10)
-GROUP BY	B.customer_id,
-			    B.first_name,
-		    	B.last_name,
-		    	E.country,
-			    D.city
+GROUP BY B.customer_id, B.first_name, B.last_name, E.country, D.city
 ORDER BY SUM(A.amount) DESC
 LIMIT 5;
