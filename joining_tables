@@ -1,3 +1,5 @@
+# Find the top 5 customers from the top 10 cities who’ve paid the highest total amounts to Rockbuster
+
 SELECT	B.customer_id,
 	B.first_name,
 	B.last_name,
