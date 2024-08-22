@@ -43,4 +43,4 @@ WITH top_countries AS
         JOIN country D ON C.country_id = D.country_id
         JOIN top_customers ON D.country = top_customers.country
         GROUP BY D.country
-        ORDER BY top_customer_count DESC
+        ORDER BY top_customer_count DESC;
